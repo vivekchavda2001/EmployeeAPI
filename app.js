@@ -11,8 +11,12 @@ var con  = mongoose.connection;
 app.use('/Employees',EmployeeRouter)
 con.on('open',()=>{
     console.log("Connected")
+    app.listen(process.env.PORT || 9000,(err)=>{
+        if(err)
+        {
+        console.log(err);
+        }
+        console.log('Server started')
+    })
 })
 
-app.listen(process.env.PORT || 9000,(err)=>{
-    console.log('Server started')
-})
