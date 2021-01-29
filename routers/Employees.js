@@ -2,7 +2,7 @@ var express = require('express')
 var router = express.Router()
 var Employee =  require('../model/employee')
 
-router.get("/view",async(req,res)=>{
+router.get("/",async(req,res)=>{
     try{
         const emp = await Employee.find()
         res.json(emp)
