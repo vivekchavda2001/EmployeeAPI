@@ -2,7 +2,7 @@ var express = require('express')
 var router = express.Router()
 var Employee =  require('../model/employee')
 
-router.get("/",async(req,res)=>{
+router.get("/view",async(req,res)=>{
     try{
         const emp = await Employee.find()
         res.json(emp)
@@ -11,7 +11,8 @@ router.get("/",async(req,res)=>{
         res.json(err)
     }
 })
-router.get("/:id",async(req,res)=>{
+
+router.get("/view/:id",async(req,res)=>{
     try{
         const emp = await Employee.findById(req.params.id)
         res.json(emp)
@@ -20,7 +21,8 @@ router.get("/:id",async(req,res)=>{
         res.json(err)
     }
 })
-router.patch("/:id",async(req,res)=>{
+
+router.patch("/update/:id",async(req,res)=>{
     try{
         const emp = await Employee.findById(req.params.id)
         emp.name = req.body.name;
@@ -31,7 +33,8 @@ router.patch("/:id",async(req,res)=>{
         res.json(err)
     }
 })
-router.delete("/:id",async(req,res)=>{
+
+router.delete("/delete/:id",async(req,res)=>{
     try{
         const emp = await Employee.findByIdAndRemove(req.params.id)
         res.json(emp)
@@ -41,8 +44,7 @@ router.delete("/:id",async(req,res)=>{
     }
 })
 
-
-router.post("/",async(req,res)=>{
+router.post("/add",async(req,res)=>{
 
    const  EmployeeData = new Employee({
         name:req.body.name,
