@@ -17,4 +17,8 @@ mongoose.connect(url,{useNewUrlParser:true,useUnifiedTopology: true,useFindAndMo
     })
 });
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 10cf044d8541759193b944f9f8339d028963bcda
 
