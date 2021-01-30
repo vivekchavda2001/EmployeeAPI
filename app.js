@@ -16,9 +16,3 @@ mongoose.connect(url,{useNewUrlParser:true,useUnifiedTopology: true,useFindAndMo
         console.log('Server started')
     })
 });
-
-<<<<<<< HEAD
-=======
-
->>>>>>> 10cf044d8541759193b944f9f8339d028963bcda
-
